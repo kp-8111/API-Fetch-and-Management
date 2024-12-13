@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Api App</title>
+        <style>
+            h1{background-color: black;color: aliceblue;}
+        </style>
+    </head>
+    <body>
+        <center>
+        <h1>Capital name finder </h1>
+    <select id="country-select">
+        {% for s in state %}
+            <option value="{{ s.capital }}">{{ s.name }}</option>
+        {% endfor %}
+    </select>
+
+    <h2>Capital:</h2>
+    <h3 id="capital"></h3>
+
+    <script>
+        document.getElementById('country-select').addEventListener('change', function() {
+            var selectedCapital = this.value;
+            document.getElementById('capital').innerText = selectedCapital;
+        });
+    </script>
+    </center>
+    </body>
+</html>
